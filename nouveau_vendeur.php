@@ -1,11 +1,11 @@
 <?php
 
     // Décalaration des variables qui sont affectés aux valeurs saisies dans le formulaire par l'utilisateur 
-    $nom = $POST_['Nom'];
-    $prenom = $POST_['Prenom'];
-    $d_n = $POST_['DateNaissance'];
-    $mail = $POST_['Mail'];
-    $m_p = $POST_['MotDePasse'];
+    $nom = isset($_POST["Nom"])? $_POST["Nom"] : "";
+    $prenom = isset($_POST["Prenom"])? $_POST["Prenom"] : "";
+    $d_n = isset($_POST["DateNaissance"])? $_POST["DateNaissance"] : "";
+    $mail = isset($_POST["Mail"])? $_POST["Mail"] : "";
+    $m_p = isset($_POST["MotDePasse"])? $_POST["MotDePasse"] : "";
     
     // Identifier le nom de base de données
     $database = "ebayce";
