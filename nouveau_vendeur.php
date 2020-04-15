@@ -33,7 +33,8 @@
         if (mysqli_num_rows($result) != 0) 
         {
             //la personnne est déjà dans la BDD
-            echo "Vous avez déjà crée un compte. Si vous souhaitez récupérer vos identifiants, veuillez nous contacter<br>". ' ' ."<a href="index.php">Revenir à la page d'accueil</a>";
+            echo "Vous avez déjà crée un compte. Si vous souhaitez récupérer vos identifiants, veuillez nous contacter<br>";?>
+            <a href="index.php">Revenir à la page d'accueil</a><?php
         } 
         else 
         {
@@ -41,7 +42,7 @@
             $sql = "INSERT INTO vendeurs(Nom, Prenom, DateNaissance, Mail, MotDePasse) VALUES ('$nom', '$prenom', '$d_n', '$mail', '$m_p')";
             $result = mysqli_query($db_handle, $sql);
             echo "Félicitations !<br>". ' ' ."Votre compte est crée. Vous avez accès au site et à ses ventes.<br>". ' ' ."L\'équipe Ebayce vous souhaite d'excellents achats.<br>";
-            echo "<a href="index.php">Revenir à la page d'accueil</a>";
+            ?><a href="index.php">Revenir à la page d'accueil</a><?php
             
             /*Pour avoir accès à la liste des vendeurs
             // Voir la liste des vendeurs
