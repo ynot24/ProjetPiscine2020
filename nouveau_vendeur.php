@@ -18,7 +18,7 @@
     if ($db_found) 
     {
         // Insertion d'un nouveau vendeur
-        $sql = "INSERT INTO 'vendeurs'('Nom', 'Prenom', 'DateNaissance', 'Mail', 'MotDePasse') VALUES ('$nom', '$prenom', '$d_n', '$mail', '$m_p')";
+        $sql = "INSERT INTO vendeurs(Nom, Prenom, DateNaissance, Mail, MotDePasse) VALUES ('$nom', '$prenom', '$d_n', '$mail', '$m_p')";
         $result = mysqli_query($db_handle, $sql);
 
         // Voir la liste des vendeurs
