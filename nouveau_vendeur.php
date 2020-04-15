@@ -17,23 +17,47 @@
     // Si la BDD existe, faire le traitement
     if ($db_found) 
     {
-        // Insertion d'un nouveau vendeur
-        $sql = "INSERT INTO vendeurs(Nom, Prenom, DateNaissance, Mail, MotDePasse) VALUES ('$nom', '$prenom', '$d_n', '$mail', '$m_p')";
-        $result = mysqli_query($db_handle, $sql);
-
-        // Voir la liste des vendeurs
         $sql = "SELECT * FROM vendeurs";
-        $result = mysqli_query($db_handle, $sql);
-        while ($data = mysqli_fetch_assoc($result)) 
+        if($nom != "") 
         {
-            echo "ID_Vendeur: " . $data['ID_Vendeur'] . '<br>';
-            echo "Nom:" . $data['Nom'] .'<br>';
-            echo "Prénom: " . $data['Prenom'] . '<br>';
-            echo "Date de Naissance: " . $data['DateNaissance'] . '<br>';
-            echo "Mail: " . $data['Mail'] . '<br>';
-            echo "Mot de Passe: " . $data['MotDePasse'] . '<br>';
+            //on cherche la personne avec les paramètres nom et prenom
+            $sql .= " WHERE Nom LIKE '%$nom%'";
+            if ($prenom != "") 
+            {
+                $sql .= " AND Prenom LIKE '%$prenom%'";
+            }
         }
-
+        $result = mysqli_query($db_handle, $sql);
+        
+        //regarder s'il y a de résultat
+        if (mysqli_num_rows($result) != 0) 
+        {
+            //la personnne est déjà dans la BDD
+            echo "Vous avez déjà crée un compte. Si vous souhaitez récupérer vos identifiants, veuillez nous contacter<br>". ' ' ."<a href="index.php">Revenir à la page d'accueil</a>";
+        } 
+        else 
+        {
+            // Insertion d'un nouveau vendeur
+            $sql = "INSERT INTO vendeurs(Nom, Prenom, DateNaissance, Mail, MotDePasse) VALUES ('$nom', '$prenom', '$d_n', '$mail', '$m_p')";
+            $result = mysqli_query($db_handle, $sql);
+            echo "Félicitations !<br>". ' ' ."Votre compte est crée. Vous avez accès au site et à ses ventes.<br>". ' ' ."L\'équipe Ebayce vous souhaite d'excellents achats.<br>";
+            echo "<a href="index.php">Revenir à la page d'accueil</a>";
+            
+            /*Pour avoir accès à la liste des vendeurs
+            // Voir la liste des vendeurs
+            $sql = "SELECT * FROM vendeurs";
+            $result = mysqli_query($db_handle, $sql);
+            while ($data = mysqli_fetch_assoc($result)) 
+            {
+                echo "ID_Vendeur: " . $data['ID_Vendeur'] . '<br>';
+                echo "Nom:" . $data['Nom'] .'<br>';
+                echo "Prénom: " . $data['Prenom'] . '<br>';
+                echo "Date de Naissance: " . $data['DateNaissance'] . '<br>';
+                echo "Mail: " . $data['Mail'] . '<br>';
+                echo "Mot de Passe: " . $data['MotDePasse'] . '<br>';
+            }
+            */
+        }
     }
     else
     {
