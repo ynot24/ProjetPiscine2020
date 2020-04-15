@@ -27,11 +27,20 @@
                     <p><label>Prix :<input type="number" name="Prix" /> €</label></p>
                     <p><label>Catégorie :<input type="text" name="Categorie" /></label></p>
                     <p><label>Description :<input type="text area" rows="6" name="Description" /></label></p>
-                    <p><label>Nature de vente :
-                        <div><input type="checkbox" name="NatureVente" value="Encheres" /><label>Encheres</label></div>
-                        <div><input type="checkbox" name="NatureVente" value="MeilleuresOffres" /><label>Meilleures Offres</label></div>
-                        <div><input type="checkbox" name="NatureVente" value="AchatImmediat" /><label>Achat Immediat</label></div>
+                    <p><label>Nature de la première vente :
+                        <div><input type="radio" name="NatureVente1" value="Encheres" /><label>Encheres</label></div>
+                        <div><input type="radio" name="NatureVente1" value="MeilleuresOffres" /><label>Meilleures Offres</label></div>
+                        <div><input type="radio" name="NatureVente1" value="AchatImmediat" /><label>Achat Immediat</label></div>
                         </label></p>
+                    <p><label>Nature de la deuxième vente (optionnelle):
+                        <div><input type="radio" name="NatureVente2" value="Encheres" /><label>Encheres</label></div>
+                        <div><input type="radio" name="NatureVente2" value="MeilleuresOffres" /><label>Meilleures Offres</label></div>
+                        <div><input type="radio" name="NatureVente2" value="AchatImmediat" /><label>Achat Immediat</label></div>
+                        </label></p>
+                    <p>Si vous avez choisi une enchère, veuillez renseigner les champs suivants : <p>
+                    <p><label>Date de fin de l'enchère :<input type="date" name="Date" /></label></p>
+                    <p><label>Heure de fin de l'enchère :<input type="time" name="Heure" min="09:00" max="18:00" /></label></p>
+                    <p><label>Prix de départ des enchères :<input type="number" name="PrixE" /> €</label></p>
                     <p><label>Photo :<input type="file" name="Photo" accept="image/*"/></label></p>
                     <p><label>Video :<input type="file" name="Video" accept="video/*"/></label></p>
                     <p><input type="submit" value="Ajouter l'item" /></p>
@@ -50,7 +59,7 @@
     else
     {
         echo "Vous ne pouvez pas avoir accès à cette rubrique.<br>";
-        echo "Veuilez vous connecter pour pouvoir y accèder";
+        echo "Veuilez vous connecter pour pouvoir y accèder.<br>";
         ?><a href="compte.html">Aller à la page de connexion</a><?php
     }
 ?>
