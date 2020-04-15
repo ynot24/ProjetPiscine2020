@@ -64,4 +64,8 @@
     {
         echo "Erreur : accès à la base de donnée échouée !";
     }
+    
+    //fermer la connexion
+    mysqli_close($db_handle);
+
 ?>
