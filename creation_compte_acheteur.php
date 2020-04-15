@@ -24,9 +24,9 @@
         <p><label>Date de Naissance :<input type="date" name="DateNaissance" /></label></p>
         <p><label>Adresse :<input type="text area" rows="3" name="Adresse" /></label></p>
         <p><label>Paiement :
-            <div><input type="radio" name="Visa" /><label for="Visa">Visa</label></div>
-            <div><input type="radio" name="MasterCard" /><label for="MasterCard">MasterCard</label></div>
-            <div><input type="radio" name="PayPal" /><label for="PayPal">PayPal</label></div>
+            <div><input type="radio" name="Paiement" value="Visa" /><label>Visa</label></div>
+            <div><input type="radio" name="Paiement" value="MasterCard" /><label>MasterCard</label></div>
+            <div><input type="radio" name="Paiement" value="PayPal" /><label>PayPal</label></div>
             </label></p>
         <p><label>Mail :<input type="email" name="Mail" /></label></p>
         <p><label>Mot de Passe :<input type="password" name="MotDePasse" /></label></p>
