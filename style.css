@@ -1,0 +1,164 @@
+body {
+font: 400 15px/1.8 Lato, sans-serif;
+padding: 0px
+margin: 0px;
+color: #D0DCD6;
+}
+  
+h3, h4 {
+ margin: 10px 0 30px 0;
+ letter-spacing: 10px;      
+ font-size: 20px;
+ color: #111;
+}
+
+.logo { /* Positionnement du logo sur la page*/
+  width: 100px;
+  height: 50px;
+  position : relative;
+  bottom : 15px;
+}
+
+
+/* A PARTIR D'ICI SOURCE : TP7 */
+
+.header {
+ background-image: url('background.png'); /*Image de background*/
+ color: #fff;
+ background-size: contain;
+ background-position: relative;
+ position: relative;
+}
+
+.description { /*Positionnement de la partie description du code */
+ left: 50%;
+ position: relative;
+ top: 45%;
+ transform: translate(-50%, -55%);
+ text-align: center;
+}
+
+.description h1 {
+ color: #fff;
+ text-shadow: color: white; text-shadow: black 0.1em 0.1em 0.2em /*ombré des letres */
+}
+
+
+ /* 
+.description p {
+color: #000;
+ font : sans-serif;
+ font-size: 1.3rem;
+ line-height: 1.5;
+} 
+--> Design des paragraphes s'il venait à y en avoir */
+
+
+.description button { /*Design du bouton sans curseur positionné dessus*/
+ border:1px solid #C09E4C;
+ position: sticky;
+ background-color: #C09E4C;
+ border-radius: 5;
+ color: #fff;
+}
+
+.description button:hover { /*design du bouton quand le curseur est positionné dessus*/
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000
+}
+
+ .description h1  {
+position : sticky;
+font-size: 2em /*Taille du titre de la section h1 */
+/* background-color:#34DC34; Couleur de fond de la section h1 */
+
+ }
+
+ .description p {
+ font-size: 1.2rem;
+ }
+ 
+}
+
+/* FIN TP 7 */
+
+.container {
+padding: 80px 120px;
+}
+  
+.carrousel-inner img {
+position : center;
+-webkit-filter: grayscale(90%);
+width: 50%; /* Set width to 100% */
+margin: auto;
+}
+
+.carrousel-caption h3 {
+color: #fff !important;
+}
+ 
+@media (max-width: 1000px) {
+.carrousel-caption {
+display: center; /* Hide the carousel text when the screen is less than 600 pixels wide */
+  }
+}
+
+.bg-1 {
+background: #D0DCD6;
+color: ;
+}
+  
+.bg-1 h3 {color: #fff;}
+
+.bg-1 p {font-style: italic;}
+
+.list-group-item:first-child {
+border-top-right-radius: 0;
+border-top-left-radius: 0;
+}
+
+.navbar {
+font-family: Montserrat, sans-serif;
+margin-bottom: 0;
+color : #36E087 ;
+border: 0;
+font-size: 11px !important;
+letter-spacing: 4px;
+opacity: 0.9;
+}
+  
+.navbar li a, .navbar .navbar-brand { 
+color: #C09E4C !important;
+}
+
+.navbar-nav li a:hover {
+color: #ccc !important;
+}
+
+.navbar-nav li.active a {
+color: #ccc !important;
+background-color: #36E087 !important;
+}
+
+.navbar-default .navbar-toggle {
+border-color: transparent;
+}
+ 
+/* Style du footer */ 
+
+.page-footer {
+ background-color: #C09E4C;
+ color: #ccc;
+ padding: 70px 0 30px;
+}
+
+.footer-copyright {
+ color: #ccc;
+ padding: 40px 0;
+}
+
+.form-control {
+border-radius: 0;
+}
+
