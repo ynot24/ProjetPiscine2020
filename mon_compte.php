@@ -1,7 +1,7 @@
 <?php
-    session_start()
+    session_start();
 
-    if($_SESSION['Mail']!="")
+    if($_SESSION['connected'])
     {
         ?>
         <!DOCTYPE html>
