@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 14 avr. 2020 à 16:27
+-- Généré le :  jeu. 16 avr. 2020 à 11:40
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `achats_immediats`;
 CREATE TABLE IF NOT EXISTS `achats_immediats` (
   `ID_AchatImmediat` int(255) NOT NULL AUTO_INCREMENT,
+  `ID_Item` int(255) NOT NULL,
   PRIMARY KEY (`ID_AchatImmediat`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -51,14 +52,15 @@ CREATE TABLE IF NOT EXISTS `acheteurs` (
   `Mail` varchar(255) NOT NULL,
   `MotDePasse` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Acheteur`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `acheteurs`
 --
 
 INSERT INTO `acheteurs` (`ID_Acheteur`, `Nom`, `Prenom`, `DateNaissance`, `Adresse`, `Paiement`, `Mail`, `MotDePasse`) VALUES
-(1, 'Petit', 'Claire', '1995-07-30', '1 Avenue Jean Moulin, 75010 Paris', 'Visa', 'claire.petit@gmail.com', 'ClairePetit95');
+(1, 'Petit', 'Claire', '1995-07-30', '1 Avenue Jean Moulin, 75010 Paris', 'Visa', 'claire.petit@gmail.com', 'ClairePetit95'),
+(2, 'Faure', 'Pascal', '1956-08-09', '1 Rue des Oliviers, 75010 Paris', 'Visa', 'p.faure@gmail.com', 'PascalFaure56');
 
 -- --------------------------------------------------------
 
@@ -99,6 +101,7 @@ CREATE TABLE IF NOT EXISTS `encheres` (
   `Heure` time NOT NULL,
   `PrixEnchere` int(255) NOT NULL,
   `PrixMax` int(255) NOT NULL,
+  `ID_Item` int(255) NOT NULL,
   PRIMARY KEY (`ID_Enchere`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -117,6 +120,8 @@ CREATE TABLE IF NOT EXISTS `items` (
   `Description` text NOT NULL,
   `Photo` varchar(255) NOT NULL,
   `Video` varchar(255) NOT NULL,
+  `ID_Vendeur` int(255) NOT NULL,
+  `ID_Acheteur` int(255) NOT NULL,
   PRIMARY KEY (`ID_Item`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -130,6 +135,7 @@ DROP TABLE IF EXISTS `meilleures_offres`;
 CREATE TABLE IF NOT EXISTS `meilleures_offres` (
   `ID_MeilleureOffre` int(255) NOT NULL AUTO_INCREMENT,
   `PrixNego` int(255) NOT NULL,
+  `ID_Item` int(255) NOT NULL,
   PRIMARY KEY (`ID_MeilleureOffre`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -148,14 +154,15 @@ CREATE TABLE IF NOT EXISTS `vendeurs` (
   `Mail` varchar(255) NOT NULL,
   `MotDePasse` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Vendeur`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `vendeurs`
 --
 
 INSERT INTO `vendeurs` (`ID_Vendeur`, `Nom`, `Prenom`, `DateNaissance`, `Mail`, `MotDePasse`) VALUES
-(1, 'Grand', 'Tom', '1979-09-02', 'tom.grand@museedeparis.fr', 'TomGrand79');
+(1, 'Grand', 'Tom', '1979-09-02', 'tom.grand@museedeparis.fr', 'TomGrand79'),
+(2, 'Dassaut', 'Eric', '1976-04-15', 'eric.dassaut@dassaut.fr', 'EricDassaut76');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
