@@ -35,6 +35,7 @@
 
             //variables de session dans $_SESSION
             $_SESSION['mail'] = $mail;
+            $_SESSION['connected'] = true;
 
             //la personnne est déjà dans la BDD
             echo "Connexion réussie<br>";
