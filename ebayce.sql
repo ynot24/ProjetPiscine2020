@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `acheteurs` (
   `Mail` varchar(255) NOT NULL,
   `MotDePasse` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Acheteur`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `acheteurs`
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `vendeurs` (
   `Mail` varchar(255) NOT NULL,
   `MotDePasse` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Vendeur`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `vendeurs`
