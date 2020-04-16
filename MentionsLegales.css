@@ -1,0 +1,137 @@
+body{
+background-color: #7D5C79 !important;
+background-size : auto;
+}
+
+.description p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 15px !important;
+	text-align: justify;
+	padding-left: 200px;
+	padding-right: 200px;
+	color: #fff;
+	text-shadow: color: white; text-shadow: black 0.1em 0.1em 0.1em
+}
+.logo { /* Positionnement du logo sur la page*/
+width: 100px;
+height: 50px;
+position : relative;
+bottom : 15px;
+}
+
+/* A PARTIR D'ICI SOURCE : TP7 */
+
+.description { /*Positionnement de la partie description du code */
+left: 50%;
+position: relative;
+top: 45%;
+transform: translate(-50%, -55%);
+text-align: center;
+}
+
+
+.description h1 {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size : 50px !important;
+ color: #fff;
+ text-shadow: color: white; text-shadow: black 0.1em 0.1em 0.2em  /*ombré des letres */
+}
+
+.description h2 {
+ font-family: Arial, Helvetica, sans-serif;
+ color: #fff;
+ text-shadow: color: white; text-shadow: black 0.1em 0.1em 0.2em /*ombré des letres */
+}
+
+.description h3 {
+ font-family: Arial, Helvetica, sans-serif;
+ color: #fff;
+ text-shadow: color: white; text-shadow: black 0.1em 0.1em 0.2em /*ombré des letres */
+}
+
+.description h4 {
+ font-family: Arial, Helvetica, sans-serif;
+ color: #fff;
+ text-shadow: color: white; text-shadow: black 0.1em 0.1em 0.2em /*ombré des letres */
+}
+ /* 
+}
+.description p {
+color: #000;
+ font : sans-serif;
+ font-size: 1.3rem;
+ line-height: 1.5;
+} 
+--> Design des paragraphes s'il venait à y en avoir */
+
+
+.description button { /*Design du bouton sans curseur positionné dessus*/
+ border:1px solid #7D5C79;
+ position: sticky;
+ background-color: #7D5C79;
+ border-radius: 5;
+ color: #fff;
+}
+
+.description button:hover { /*design du bouton quand le curseur est positionné dessus*/
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000
+}
+
+ .description h1  {
+position : sticky;
+font-size: 2em /*Taille du titre de la section h1 */
+/* background-color:#34DC34; Couleur de fond de la section h1 */
+
+ }
+
+ .description p {
+ font-size: 1.2rem;
+ }
+ 
+}
+
+/* FIN TP 7 */
+
+.navbar {
+font-family: Montserrat, sans-serif;
+margin-bottom: 0;
+color : #36E087 ;
+border: 0;
+font-size: 11px !important;
+letter-spacing: 4px;
+opacity: 0.9;
+}
+  
+.navbar li a, .navbar .navbar-brand { 
+color: #7D5C79 !important;
+}
+
+.navbar-nav li a:hover {
+color: #ccc !important;
+}
+
+.navbar-nav li.active a {
+color: #ccc !important;
+background-color: #7D5C79 !important;
+}
+
+.navbar-default .navbar-toggle {
+border-color: transparent !important;
+}
+ 
+/* Style du footer */ 
+
+.page-footer {
+ background-image: url('background.png') !important;
+ color: #ccc;
+ padding: 70px 0 30px;
+}
+
+.footer-copyright {
+ color: #ccc;
+ padding: 40px 0;
+}
+
+
