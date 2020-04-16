@@ -62,7 +62,7 @@
                     $result = mysqli_query($db_handle, $sql);
                     
                     // Insertion d'un nouvel enchère
-                    $sql="INSERT INTO encheres('Date', Heure, PrixEnchere, ID_Item) VALUES ('$date', '$heure', '$prix_enchere', '$id_item')";
+                    $sql="INSERT INTO encheres('Date', Heure, PrixEnchere, Statut_vente, ID_Item) VALUES ('$date', '$heure', '$prix_enchere', 'non vendu','$id_item')";
                     $result = mysqli_query($db_handle, $sql);
                     
                     echo "Félicitations !<br>". ' ' ."La vente a commencé !";
@@ -80,7 +80,7 @@
                 $result = mysqli_query($db_handle, $sql);
                 
                 // Insertion d'une nouvelle meilleure offre
-                $sql="INSERT INTO meilleures_offres(ID_Item) VALUES ('$id_item')";
+                $sql="INSERT INTO meilleures_offres(Statut_vente, ID_Item) VALUES ('non vendu','$id_item')";
                 $result = mysqli_query($db_handle, $sql);
                 
                 echo "Félicitations !<br>". ' ' ."La vente a commencé !";
@@ -93,7 +93,7 @@
                 $result = mysqli_query($db_handle, $sql);
                 
                 // Insertion d'une nouvel achat immédiat
-                $sql="INSERT INTO achats_immediats(ID_Item) VALUES ('$id_item')";
+                $sql="INSERT INTO achats_immediats(Statut_vente, ID_Item) VALUES ('non vendu','$id_item')";
                 $result = mysqli_query($db_handle, $sql);
                 
                 echo "Félicitations !<br>". ' ' ."La vente a commencé !";
@@ -106,11 +106,11 @@
                 $result = mysqli_query($db_handle, $sql);
                 
                 // Insertion d'une nouvelle meilleure offre
-                $sql="INSERT INTO meilleures_offres(ID_Item) VALUES ('$id_item')";
+                $sql="INSERT INTO meilleures_offres(Statut_vente, ID_Item) VALUES ('non vendu','$id_item')";
                 $result = mysqli_query($db_handle, $sql);
 
                 // Insertion d'une nouvel achat immédiat
-                $sql="INSERT INTO achats_immediats(ID_Item) VALUES ('$id_item')";
+                $sql="INSERT INTO achats_immediats(Statut_vente, ID_Item) VALUES ('non vendu','$id_item')";
                 $result = mysqli_query($db_handle, $sql);
 
                 echo "Félicitations !<br>". ' ' ."La vente a commencé !";
@@ -125,11 +125,11 @@
                     $result = mysqli_query($db_handle, $sql);
                     
                     // Insertion d'un nouvel enchère
-                    $sql="INSERT INTO encheres('Date', Heure, PrixEnchere, ID_Item) VALUES ('$date', '$heure', '$prix_enchere', '$id_item')";
+                    $sql="INSERT INTO encheres('Date', Heure, PrixEnchere, Statut_vente, ID_Item) VALUES ('$date', '$heure', '$prix_enchere', 'non vendu', '$id_item')";
                     $result = mysqli_query($db_handle, $sql);
 
                     // Insertion d'une nouvel achat immédiat
-                    $sql="INSERT INTO achats_immediats(ID_Item) VALUES ('$id_item')";
+                    $sql="INSERT INTO achats_immediats(Statut_vente, ID_Item) VALUES ('non vendu', '$id_item')";
                     $result = mysqli_query($db_handle, $sql);
 
                     echo "Félicitations !<br>". ' ' ."La vente a commencé !";
