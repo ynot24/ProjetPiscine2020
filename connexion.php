@@ -47,6 +47,10 @@
             ?><a href="compteV2.html">Accéder à la page de connexion</a><?php
         }
     }
+    else
+    {
+        echo "Erreur : accès à la base de donnée échouée !";
+    }
     //fermer la connexion
     mysqli_close($db_handle);
 
