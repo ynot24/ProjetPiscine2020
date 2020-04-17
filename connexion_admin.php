@@ -58,6 +58,10 @@
             <?php
         }
     }
+    else
+    {
+        echo "Erreur BDD";
+    }
     //fermer la connexion
     mysqli_close($db_handle);
 
