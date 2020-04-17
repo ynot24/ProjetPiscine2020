@@ -1,4 +1,8 @@
 <?php
+    
+    //Déclaration des variables
+    $id_vendeur = isset($_POST["ID_Vendeur"])? $_POST["ID_Vendeur"] : "";
+    
     // Identifier le nom de base de données
     $database = "ebayce";
 
@@ -14,33 +18,22 @@
         if (mysqli_num_rows($result) == 0) 
         {
             //Vendeur inexistant
-            echo "Cannot delete. Book not found. <br>";
+            /*
+            
+            CODE HTML QUI AFFICHE UNE PAGE AVEC UN MESSAGE QUI DIT QUE LE VENDEUR N'EXISTE PAS
+
+            */
         } 
         else 
         {
-            while ($data = mysqli_fetch_assoc($result) ) 
-            {
-                $id = $data['ID'];
-                echo "<br>";
-            }
-            $sql = "DELETE FROM books";
-            $sql .= " WHERE ID = $id";
+            $sql = "DELETE FROM vendeurs WHERE ID_Vendeur = $id_vendeur";
             $result = mysqli_query($db_handle, $sql);
-            echo "Delete successful. <br>";
             
-            //on affiche les autres livres dans la BDD
-            $sql = "SELECT * FROM books";
-            $result = mysqli_query($db_handle, $sql);
-            echo "Les livres dans notre bibliothèque: <br>";
-            while ($data = mysqli_fetch_assoc($result)) 
-            {
-                echo "ID: " . $data['ID'] . "<br>";
-                echo "Titre: " . $data['Titre'] . "<br>";
-                echo "Auteur: " . $data['Auteur'] . "<br>";
-                echo "Année: " . $data['Annee'] . "<br>";
-                echo "Editeur: " . $data['Editeur'] . "<br>";
-                echo "<br>";
-            }
+            /*
+            
+            CODE HTML QUI AFFICHE UNE PAGE AVEC UN MESSAGE QUI DIT QUE LE VENDEUR A ETE SUPPRIME
+
+            */
         }
     } 
     else
