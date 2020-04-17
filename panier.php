@@ -64,9 +64,16 @@
                             {
                                 while ($data = mysqli_fetch_assoc($result)) 
                                 {
-                                    echo "Photo: " . $data['Photo'] . '<br>';
-                                    echo "Intitulé: " . $data['Intitule'] . '<br>';
-                                    echo "Prix:" . $data['Prix'] .'<br>';
+                                    if ($data['Statut_vente']=='non vendu')
+                                    {
+                                        echo "Photo: " . $data['Photo'] . '<br>';
+                                        echo "Intitulé: " . $data['Intitule'] . '<br>';
+                                        echo "Prix:" . $data['Prix'] .'<br>';
+                                    }
+                                    else
+                                    {
+                                        echo "Panier Vide";
+                                    }
                                 }
                                 ?>
                                 <form action="validation_panier.php">
