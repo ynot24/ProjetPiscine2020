@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 16 avr. 2020 à 23:41
+-- Généré le :  sam. 18 avr. 2020 à 20:15
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -34,7 +34,16 @@ CREATE TABLE IF NOT EXISTS `achats_immediats` (
   `Statut_vente` varchar(255) NOT NULL,
   `ID_Item` int(255) NOT NULL,
   PRIMARY KEY (`ID_AchatImmediat`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `achats_immediats`
+--
+
+INSERT INTO `achats_immediats` (`ID_AchatImmediat`, `Statut_vente`, `ID_Item`) VALUES
+(1, 'non vendu', 1),
+(2, 'non vendu', 2),
+(3, 'non vendu', 3);
 
 -- --------------------------------------------------------
 
@@ -50,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `acheteurs` (
   `DateNaissance` date NOT NULL,
   `Adresse` varchar(255) NOT NULL,
   `Paiement` varchar(10) NOT NULL,
+  `Solde` int(255) NOT NULL,
   `Mail` varchar(255) NOT NULL,
   `MotDePasse` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Acheteur`)
@@ -59,9 +69,9 @@ CREATE TABLE IF NOT EXISTS `acheteurs` (
 -- Déchargement des données de la table `acheteurs`
 --
 
-INSERT INTO `acheteurs` (`ID_Acheteur`, `Nom`, `Prenom`, `DateNaissance`, `Adresse`, `Paiement`, `Mail`, `MotDePasse`) VALUES
-(1, 'Faure', 'Pascal', '1956-08-09', '1 Rue des Oliviers, 75010 Paris', 'Visa', 'p.faure@gmail.com', 'PascalFaure56'),
-(2, 'Petit', 'Claire', '1995-07-30', '1 Avenue Jean Moulin, 75010 Paris', 'Visa', 'claire.petit@gmail.com', 'ClairePetit95');
+INSERT INTO `acheteurs` (`ID_Acheteur`, `Nom`, `Prenom`, `DateNaissance`, `Adresse`, `Paiement`, `Solde`, `Mail`, `MotDePasse`) VALUES
+(1, 'Faure', 'Pascal', '1956-08-09', '1 Rue des Oliviers, 75010 Paris', 'Visa', 200, 'p.faure@gmail.com', 'PascalFaure56'),
+(2, 'Petit', 'Claire', '1995-07-30', '1 Avenue Jean Moulin, 75010 Paris', 'Visa', 200, 'claire.petit@gmail.com', 'ClairePetit95');
 
 -- --------------------------------------------------------
 
@@ -122,10 +132,20 @@ CREATE TABLE IF NOT EXISTS `items` (
   `Description` text NOT NULL,
   `Photo` varchar(255) NOT NULL,
   `Video` varchar(255) NOT NULL,
+  `Statut_vente` varchar(255) NOT NULL,
   `ID_Vendeur` int(255) NOT NULL,
   `ID_Acheteur` int(255) NOT NULL,
   PRIMARY KEY (`ID_Item`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `items`
+--
+
+INSERT INTO `items` (`ID_Item`, `Intitule`, `Prix`, `Categorie`, `Description`, `Photo`, `Video`, `Statut_vente`, `ID_Vendeur`, `ID_Acheteur`) VALUES
+(1, 'Totem du Chevalier de Hadoque 21 cm Tintin', 75, 'ferraille', 'Objet ayant été utilisé. Quelques imperfections au niveau du buste. Bon état.', 'images/Totem.jpg', '', 'non vendu', 2, 0),
+(2, 'Médaille centenaire 1918', 60, 'ferraille', 'Trésor de France Médaille Souvenir Albert Première Guerre Mondial\r\n', 'images/Pièce1.jpg', '', 'non vendu', 2, 0),
+(3, 'Coffret de pièces françaises de 1996 [RARE]', 260, 'ferraille', '11 pièces, belle épreuve, comme neuf. Petite inscription sur le carton.', 'images/Set.JPG', '', 'non vendu', 2, 0);
 
 -- --------------------------------------------------------
 
